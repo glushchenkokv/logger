@@ -18,7 +18,6 @@ func TestTextLogger(t *testing.T) {
 	log := NewLogger(Config{
 		Level:            "trace",
 		Format:           "text",
-		ReportCaller:     false,
 		DisableTimestamp: false,
 	})
 
@@ -33,7 +32,6 @@ func TestJsonLogger(t *testing.T) {
 	log := NewLogger(Config{
 		Level:            "trace",
 		Format:           "json",
-		ReportCaller:     false,
 		DisableTimestamp: false,
 	})
 
@@ -49,7 +47,6 @@ func TestFatalLogger(t *testing.T) {
 	log := NewLogger(Config{
 		Level:            "trace",
 		Format:           "json",
-		ReportCaller:     false,
 		DisableTimestamp: false,
 	})
 
@@ -62,7 +59,6 @@ func TestPanicLogger(t *testing.T) {
 	log := NewLogger(Config{
 		Level:            "trace",
 		Format:           "json",
-		ReportCaller:     false,
 		DisableTimestamp: false,
 	})
 

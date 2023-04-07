@@ -9,10 +9,9 @@ import (
 
 // Config configures Logger
 type Config struct {
-	Level            string `yaml:"level"`                               // The logging level the logger should log at (`error` by default).
-	Format           string `yaml:"format"`                              // The logging format (`text` or `json`) (`json` by default).
-	ReportCaller     bool   `yaml:"reportCaller"     split_words:"true"` // Flag for whether to log caller info (off by default).
-	DisableTimestamp bool   `yaml:"disableTimestamp" split_words:"true"` // DisableTimestamp allows disabling automatic timestamps in output (off by default).
+	Level            string // The logging level the logger should log at (`error` by default).
+	Format           string // The logging format (`text` or `json`) (`json` by default).
+	DisableTimestamp bool   // DisableTimestamp allows disabling automatic timestamps in output (off by default).
 }
 
 type Logger struct {
@@ -22,10 +21,9 @@ type Logger struct {
 func NewLogger(cfg Config) *Logger {
 	return &Logger{
 		logger: &logrus.Logger{
-			Out:          os.Stdout,
-			Formatter:    newFormatter(cfg.Format, cfg.DisableTimestamp),
-			ReportCaller: cfg.ReportCaller,
-			Level:        getLevel(cfg.Level),
+			Out:       os.Stdout,
+			Formatter: newFormatter(cfg.Format, cfg.DisableTimestamp),
+			Level:     getLevel(cfg.Level),
 		},
 	}
 }
